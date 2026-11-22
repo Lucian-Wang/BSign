@@ -1,0 +1,2 @@
+(()=>{let language=localStorage.getItem('bsign-language')==='en'?'en':'zh';const apply=()=>{document.documentElement.lang=language==='zh'?'zh-CN':'en';document.title=language==='zh'?'隐私与条款 · BSign':'Privacy & terms · BSign';document.querySelectorAll('[data-en][data-zh]').forEach(el=>el.textContent=el.dataset[language]);document.getElementById('lang').textContent=language==='zh'?'EN':'中文';};document.getElementById('lang').onclick=()=>{language=language==='zh'?'en':'zh';localStorage.setItem('bsign-language',language);apply();};apply();})();
+

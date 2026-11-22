@@ -12,7 +12,10 @@
     "prepare:deploy": "node scripts/version-assets.mjs"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "ShihuiWang",
+    "url": "https://github.com/Lucian-Wang"
+  },
   "license": "ISC",
   "type": "module",
   "dependencies": {
@@ -25,5 +28,10 @@
   },
   "devDependencies": {
     "esbuild": "^0.28.2"
+  },
+  "homepage": "https://bsign.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucian-Wang/BSign.git"
   }
 }

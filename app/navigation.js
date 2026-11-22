@@ -7,6 +7,13 @@
   header.className = 'app-header';
   header.innerHTML = `<a class="brand" href="${home}"><span class="brand-symbol">b</span>BSign <span class="brand-cn">必签</span></a><nav class="header-end app-nav" aria-label="Main navigation / 主导航"><a class="auth-home" href="${home}" data-en="← Workspace" data-zh="← 返回工作台">← Workspace</a>${items.map(([url,en,zh])=>`<a class="app-nav-link" href="${url}" ${path===url||(url==='/'&&workspace)?'aria-current="page"':''} data-en="${en}" data-zh="${zh}">${en}</a>`).join('')}<button id="account" class="quiet app-user" type="button" title="Account settings / 账户设置" hidden></button><button id="logout" class="quiet" type="button" hidden data-en="Sign out" data-zh="退出">Sign out</button><a id="nav-signin" class="app-nav-link" href="/" hidden data-en="Sign in" data-zh="登录">Sign in</a><button id="lang" class="quiet" type="button">中文</button></nav>`;
   document.currentScript.replaceWith(header);
+  document.addEventListener('DOMContentLoaded',()=>{
+    const footer=document.createElement('footer');footer.className='site-attribution';
+    footer.innerHTML='<span>© 2026 <a href="https://bsign.net" target="_blank" rel="noopener noreferrer">BSign / 必签</a> · <a href="https://github.com/Lucian-Wang" target="_blank" rel="noopener noreferrer">ShihuiWang</a></span><span><a href="https://github.com/Lucian-Wang/BSign" target="_blank" rel="noopener noreferrer" data-en="Source code" data-zh="开源代码">Source code</a> · <a href="https://github.com/Lucian-Wang/BSign/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">ISC License</a> · <a href="/privacy.html" data-en="Privacy & terms" data-zh="隐私与条款">Privacy & terms</a></span>';
+    document.body.append(footer);
+    const translate=()=>{const zh=document.documentElement.lang.startsWith('zh');footer.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[zh?'zh':'en']);};
+    new MutationObserver(translate).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});translate();
+  });
   const accountButton=document.getElementById('account');
   const avatar=()=>accountButton.dataset.initial=Array.from(accountButton.textContent.trim())[0]||'B';
   new MutationObserver(avatar).observe(accountButton,{childList:true,characterData:true,subtree:true});avatar();

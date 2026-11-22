@@ -128,6 +128,12 @@ sudo bash deploy/install.sh --domain sign.example.com --email ops@example.com
 
 普通用户注册和密码恢复需要配置 Resend 发信服务。管理员首次设置、邮件配置、反向代理、更新及备份恢复的完整步骤见 **[部署指南](docs/DEPLOY.md)**。
 
+## 作者与版权
+
+作者：[ShihuiWang](https://github.com/Lucian-Wang) · 项目：[BSign / 必签](https://bsign.net) · [GitHub 源码](https://github.com/Lucian-Wang/BSign)
+
+Copyright © 2026 ShihuiWang and BSign contributors.
+
 ## 许可
 
 BSign 源代码采用 [ISC 许可证](LICENSE)。第三方组件许可见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
