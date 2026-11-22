@@ -130,9 +130,9 @@ sudo bash deploy/install.sh --domain sign.example.com --email ops@example.com
 
 ## 作者与版权
 
-作者：[ShihuiWang](https://github.com/Lucian-Wang) · 项目：[BSign / 必签](https://bsign.net) · [GitHub 源码](https://github.com/Lucian-Wang/BSign)
+作者：[Lucian Wang](https://github.com/Lucian-Wang) · 项目：[BSign / 必签](https://bsign.net) · [GitHub 源码](https://github.com/Lucian-Wang/BSign)
 
-Copyright © 2026 ShihuiWang and BSign contributors.
+Copyright © 2026 Lucian Wang and BSign contributors.
 
 ## 许可
 

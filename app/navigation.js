@@ -9,7 +9,7 @@
   document.currentScript.replaceWith(header);
   document.addEventListener('DOMContentLoaded',()=>{
     const footer=document.createElement('footer');footer.className='site-attribution';
-    footer.innerHTML='<span>© 2026 <a href="https://bsign.net" target="_blank" rel="noopener noreferrer">BSign / 必签</a> · <a href="https://github.com/Lucian-Wang" target="_blank" rel="noopener noreferrer">ShihuiWang</a></span><span><a href="https://github.com/Lucian-Wang/BSign" target="_blank" rel="noopener noreferrer" data-en="Source code" data-zh="开源代码">Source code</a> · <a href="https://github.com/Lucian-Wang/BSign/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">ISC License</a> · <a href="/privacy.html" data-en="Privacy & terms" data-zh="隐私与条款">Privacy & terms</a></span>';
+    footer.innerHTML='<span>© 2026 <a href="https://bsign.net" target="_blank" rel="noopener noreferrer">BSign / 必签</a> · <a href="https://github.com/Lucian-Wang" target="_blank" rel="noopener noreferrer">Lucian Wang</a></span><span><a href="https://github.com/Lucian-Wang/BSign" target="_blank" rel="noopener noreferrer" data-en="Source code" data-zh="开源代码">Source code</a> · <a href="https://github.com/Lucian-Wang/BSign/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">ISC License</a> · <a href="/privacy.html" data-en="Privacy & terms" data-zh="隐私与条款">Privacy & terms</a></span>';
     document.body.append(footer);
     const translate=()=>{const zh=document.documentElement.lang.startsWith('zh');footer.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[zh?'zh':'en']);};
     new MutationObserver(translate).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});translate();
