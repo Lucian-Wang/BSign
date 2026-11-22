@@ -1,0 +1,66 @@
+/* Compact inspector. The document area and three-column widths are unchanged. */
+#workspace .side-scroll{padding:0 14px;min-height:0;overflow:auto}
+#workspace .ins-section{padding:14px 0;border-bottom:1px solid #edf1e6}
+#workspace .section-heading{margin:0 0 10px;gap:6px}
+#workspace .section-heading .eyebrow{font-size:10px;letter-spacing:.1em}
+#workspace .section-heading .icon-button{width:24px;height:24px;padding:0;font-size:18px}
+#workspace #company{height:44px;padding:8px 10px;background:#fafbf7;font-size:12px}
+#workspace #library{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:none;margin:0}
+#workspace #library>.hint{grid-column:1/-1;font-size:11px;margin:8px 0}
+#workspace #library .seal-card{display:flex;flex-direction:column;gap:5px;min-width:0;padding:10px 6px 8px;background:#fafbf7;text-align:center;border-radius:10px;min-height:100px}
+#workspace #library .seal-card img{width:38px;height:38px;object-fit:contain;background:transparent}
+#workspace #library .seal-card .info{flex:0;width:100%;padding:0 5px}
+#workspace #library .seal-card strong{font-size:11px;line-height:1.4;white-space:normal;overflow-wrap:anywhere}
+#workspace #library .seal-card small{font-size:9px;margin-top:3px}
+#workspace #library .seal-card .edit{position:absolute;right:3px;top:2px;padding:0 4px;min-height:22px;font-size:14px}
+#workspace #library .seal-card.active{border-color:#4d8a68;box-shadow:0 0 0 2px #dcebcf;background:#f5f9ee}
+#workspace .seal-actions{gap:7px;margin-top:10px}
+#workspace .seal-actions button{font-size:11px;padding:8px 5px;min-height:34px;margin:0}
+#workspace .small-note{font-size:10px;line-height:1.65;margin:9px 0;color:#647a6d}
+#workspace #place{font-size:11px;min-height:34px;padding:8px;margin:0}
+#workspace .library-section>.checkbox{font-size:10px;gap:7px;margin:10px 0 0}
+#workspace .checkbox input{width:14px;height:14px;margin:0;flex-shrink:0}
+#workspace #selection-panel{border:0;border-bottom:1px solid #edf1e6;border-radius:0;padding:14px 0;background:#fff;margin:0}
+#workspace .selection-heading{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:650;letter-spacing:.08em;color:#5f7669;margin-bottom:10px}
+#workspace #deselect-mark{padding:0 6px;min-height:24px;font-size:18px}
+#workspace .selected-card{display:flex;align-items:center;gap:10px;padding:9px;background:#f4f9e9;border:1px solid #e1ead5;border-radius:9px;margin-bottom:10px}
+#workspace #selection-image{width:34px;height:34px;object-fit:contain}
+#workspace #selected-info{font-size:11px;font-weight:600;line-height:1.5;margin:0;overflow-wrap:anywhere}
+#workspace #selection-panel label{font-size:11px;margin:12px 0;display:block;position:relative}
+#workspace #selection-panel label[hidden]{display:none}
+#workspace #selection-panel output{float:right;font-size:10px;padding:1px 5px;background:#f4f7ed;border-radius:4px;color:#225a49;margin:0}
+#workspace #size-field,#workspace #date-size-field{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#workspace #size-field>span{max-width:50%;font-size:10px}
+#workspace #size-field .button-row{display:flex;gap:0;border:1px solid #d2dcc7;border-radius:8px;overflow:hidden;margin:0;flex:0 0 auto}
+#workspace #size-field button{width:27px;border:0;border-radius:0;padding:0;background:#fff;font-size:12px}
+#workspace #size-field input{width:48px;height:30px;text-align:center;border:0;border-left:1px solid #e2e8da;border-right:1px solid #e2e8da;border-radius:0;padding:3px;font-size:11px}
+#workspace #placed-date-font{width:80px;height:30px;padding:4px 8px}
+#workspace #fixed-mark-size{font-size:10px;color:#647a6d;margin:0 0 6px;text-align:right}
+#workspace #selection-panel>.button-row{gap:7px;margin-top:12px}
+#workspace #selection-panel>.button-row button{font-size:10px;padding:7px 3px;background:transparent}
+#workspace #remove-mark{color:#b44c3f}
+#workspace input[type=range]{appearance:none;-webkit-appearance:none;display:block;width:100%;height:4px;padding:0;margin:10px 0 15px;border:0;border-radius:999px;background:linear-gradient(90deg,#4d8a68 var(--fill,50%),#e3e9db var(--fill,50%));cursor:pointer}
+#workspace input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:14px;height:14px;background:#fff;border:2px solid #3d7d5c;border-radius:50%;box-shadow:0 1px 3px #0003}
+#workspace input[type=range]::-moz-range-thumb{width:12px;height:12px;background:#fff;border:2px solid #3d7d5c;border-radius:50%}
+#workspace .ins-disclosure{border-bottom:1px solid #edf1e6}
+#workspace .ins-disclosure summary{display:flex;align-items:center;justify-content:space-between;padding:13px 0;list-style:none;cursor:pointer;font-size:11px;font-weight:600;color:#2f4c43}
+#workspace .ins-disclosure summary::-webkit-details-marker{display:none}
+#workspace .ins-disclosure[open] summary>span:last-child{transform:rotate(180deg)}
+#workspace .ins-disclosure .seam-box{border:0;padding:0;margin:0}
+#workspace .ins-disclosure label{font-size:11px;margin:10px 0}
+#workspace .ins-disclosure .hint{font-size:10px;line-height:1.7}
+#workspace .ins-disclosure .button-row{gap:5px}
+#workspace .ins-disclosure .button-row>*{padding:6px;height:30px;font-size:11px}
+#workspace .ins-disclosure #saved-certificate{font-size:11px;padding:8px}
+#workspace .ins-disclosure .certificate-links a,#workspace .ins-disclosure .certificate-links button{font-size:10px}
+#workspace .export-panel{flex-shrink:0;padding:12px 14px;border-top:1px solid #e2e8da;background:#fff;box-shadow:0 -12px 26px -22px #173f3540}
+#workspace #export{height:45px;padding:10px;font-size:13px;border-radius:12px;box-shadow:inset 0 1px 0 #ffffff30,0 5px 12px -8px #173f3570}
+#workspace .export-panel>.hint{display:block;text-align:left;font-size:9px;line-height:1.5;margin:7px 0 0;color:#647a6d}
+#workspace .document-assets{margin:10px 0}
+#workspace .document-assets h3{font-size:11px}#workspace .document-assets .hint{font-size:10px}
+#workspace .document-assets .seal-card{padding:7px;gap:7px}#workspace .document-assets .seal-card img{width:32px;height:32px}#workspace .document-assets .seal-card strong{font-size:11px}#workspace .document-assets .seal-card small{font-size:9px}
+
+#workspace .mark-delete{display:none;position:absolute;top:0;right:0;z-index:3;width:22px;height:22px;min-height:0;padding:0;border:1px solid #e3ccc7;border-radius:50%;background:#fff;color:#b34336;font:20px/20px Arial,sans-serif;box-shadow:0 1px 5px #173f3526;cursor:pointer;touch-action:manipulation}
+#workspace .mark.selected .mark-delete{display:block}
+#workspace .mark-delete:hover{background:#fff0ed}
+@media(pointer:coarse){#workspace .mark-delete{width:30px;height:30px;font-size:24px;line-height:28px}}

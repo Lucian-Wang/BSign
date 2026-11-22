@@ -1,0 +1,71 @@
+#mobile-dock,#mobile-placement,#mobile-menu,#mobile-edit-text,#mobile-nudges{display:none}
+#mobile-sheet:not([open]){display:none}
+@media(max-width:760px), (max-width:950px) and (max-height:500px), (hover:none) and (pointer:coarse) and (max-width:1100px){
+ body.mobile-workspace{height:100dvh;overflow:hidden}
+ .mobile-workspace .app-header{height:58px;min-height:58px;padding:8px 14px;flex-wrap:nowrap;position:relative;z-index:15}
+ .mobile-workspace #mobile-menu{display:block;margin-left:auto;padding:10px 14px;min-height:40px;background:#edf4e7;color:#194b3c;border-radius:9px;font-size:13px}
+ .mobile-workspace .app-header .app-nav{display:none}
+ .mobile-workspace .app-header.mobile-menu-open .app-nav{display:flex;position:absolute;top:58px;left:8px;right:8px;width:auto;padding:12px;background:white;border:1px solid #dce5d4;border-radius:12px;box-shadow:0 12px 30px #183c3226;flex-wrap:wrap}
+ body.mobile-workspace main#workspace{display:block;height:calc(100dvh - 58px);min-height:0;padding:0 0 calc(68px + env(safe-area-inset-bottom));margin:0;overflow:hidden}
+ #workspace>.tools-panel,#workspace>.thumbnail-panel{display:none}
+ #workspace>.document-panel{height:100%;min-height:0;width:100%;border:0;border-radius:0;display:flex;flex-direction:column;box-shadow:none}
+ #workspace .doc-toolbar{padding:7px 10px;gap:4px;flex-shrink:0;background:#fff}
+ #workspace .file-label{width:100%;gap:8px;min-width:0}
+ #workspace #open-pdf{padding:7px 11px;min-height:40px;font-size:12px}
+ #workspace #filename{flex:1;max-width:none;min-width:0;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ #workspace .page-controls{width:100%;justify-content:center;gap:10px}
+ #workspace .page-controls .icon-button{height:40px;width:40px;font-size:25px}
+ #workspace #zoom{height:40px;font-size:12px;max-width:130px}
+ #workspace #notice{font-size:11px;padding:7px 12px;line-height:1.5;max-height:48px;overflow:auto;flex-shrink:0}
+ #workspace #viewer{flex:1;min-height:0;padding:16px 12px;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ #workspace .document-panel>footer{display:none}
+ #workspace #empty{padding:20px 5px}
+ #workspace #empty .paper-icon{transform:scale(.65);margin:0 auto -15px}
+ #workspace #empty h2{font-size:22px;margin:15px 0}
+ #workspace #empty p{font-size:13px}
+ #workspace #empty small{font-size:11px;margin-top:16px}
+ #workspace #mobile-dock{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;bottom:0;left:0;right:0;z-index:14;padding:5px 8px calc(5px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #dce5d4;box-shadow:0 -5px 20px #173f350a}
+ #mobile-dock button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;background:transparent;color:#194b3c;padding:5px;font-size:12px;border-radius:10px}
+ #mobile-dock button b{font-size:21px;font-weight:400;line-height:22px}
+ #mobile-dock #mobile-export{background:#194b3c;color:white}
+ #mobile-dock button:disabled{opacity:.35}
+ #workspace #mobile-placement:not([hidden]){display:flex;align-items:center;justify-content:space-between;gap:8px;position:fixed;bottom:calc(72px + env(safe-area-inset-bottom));left:10px;right:10px;z-index:13;padding:8px 12px;border-radius:10px;background:#194b3c;color:white;font-size:12px;box-shadow:0 4px 18px #0002}
+ #mobile-placement button{min-height:40px;padding:8px;background:#ffffff22;color:white;border-radius:7px;white-space:nowrap}
+ #workspace.mobile-placing .mark,#workspace.mobile-placing .seam-slice{pointer-events:none!important}
+ #workspace .mark{touch-action:none}
+ #workspace .resize-handle{width:24px;height:24px;right:-12px;bottom:-12px;touch-action:none;background:#fff;border:2px solid #27735c;border-radius:50%;box-shadow:0 1px 4px #0003}
+ #mobile-sheet{position:fixed;inset:auto 0 0;width:100%;max-width:none;max-height:86dvh;margin:0;padding:0;border:0;border-radius:20px 20px 0 0;background:#fff;overflow:hidden}
+ #mobile-sheet[open]{display:flex;flex-direction:column}
+ .mobile-sheet-heading{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid #e5ebdf;flex-shrink:0;font-size:15px}
+ #mobile-sheet-close{height:44px;width:44px;font-size:26px;background:#f1f5ed;color:#194b3c;border-radius:10px}
+ #mobile-sheet-content{overflow:auto;overscroll-behavior:contain;padding-bottom:env(safe-area-inset-bottom)}
+ #workspace #mobile-sheet .tools-panel{display:block;box-shadow:none;border:0;border-radius:0;overflow:visible}
+ #workspace #mobile-sheet .side-scroll{max-height:none;padding:0 18px;overflow:visible}
+ #workspace #mobile-sheet .thumbnail-panel{display:flex;max-height:none;min-height:0;border:0;box-shadow:none}
+ #mobile-sheet .thumbnail-heading{display:none}
+ #workspace #mobile-sheet #thumbnail-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:16px;gap:12px;overflow:visible}
+ #workspace #mobile-sheet .page-thumb{width:100%;margin:0;padding:8px}
+ #workspace #mobile-sheet .page-thumb canvas{max-height:none;width:100%;height:auto}
+ #workspace[data-mobile-sheet="add"] #selection-panel,#workspace[data-mobile-sheet="add"] .ins-disclosure,#workspace[data-mobile-sheet="add"] .export-panel{display:none}
+ #workspace[data-mobile-sheet="adjust"] .ins-section,#workspace[data-mobile-sheet="adjust"] #certificate-settings,#workspace[data-mobile-sheet="adjust"] .export-panel{display:none}
+ #workspace[data-mobile-sheet="export"] .ins-section,#workspace[data-mobile-sheet="export"] #selection-panel,#workspace[data-mobile-sheet="export"] #seam-settings{display:none}
+ #workspace #mobile-sheet .export-panel{padding:16px 18px}
+ #workspace #mobile-sheet #export{height:48px;font-size:15px}
+ #workspace #mobile-sheet .section-heading .eyebrow,#workspace #mobile-sheet .selection-heading{font-size:12px}
+ #workspace #mobile-sheet .seal-card strong,#workspace #mobile-sheet label,#workspace #mobile-sheet summary{font-size:14px}
+ #workspace #mobile-sheet .seal-card small,#workspace #mobile-sheet .hint,#workspace #mobile-sheet .small-note{font-size:12px}
+ #workspace #mobile-sheet button{min-height:44px;font-size:13px}
+ #workspace #mobile-sheet input:not([type=range]):not([type=checkbox]),#workspace #mobile-sheet select{font-size:16px;min-height:44px}
+ #workspace #mobile-sheet #library .seal-card img{width:52px;height:52px}
+ #workspace #mobile-sheet #library .seal-card{padding:14px 8px;min-height:122px}
+ #workspace #mobile-sheet #library .seal-card .edit{min-width:36px;min-height:36px}
+ #workspace #mobile-sheet input[type=range]{height:6px;margin:20px 0 24px}
+ #workspace #mobile-sheet input[type=range]::-webkit-slider-thumb{width:24px;height:24px}
+ #workspace #mobile-sheet .checkbox input{width:20px;height:20px}
+ #workspace #mobile-nudges:not([hidden]){display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+ #mobile-nudges>span{grid-column:1/-1;font-size:12px;color:#657c70}
+ #mobile-nudges button,#mobile-edit-text{background:#edf4e7;color:#194b3c;border-radius:8px}
+ #workspace #mobile-edit-text:not([hidden]){display:block;width:100%;margin-top:10px}
+ .mobile-workspace dialog:not(#mobile-sheet){max-height:90dvh;overflow:auto;padding:20px;width:calc(100vw - 24px)}
+ .mobile-workspace dialog input:not([type=range]):not([type=checkbox]),.mobile-workspace dialog textarea,.mobile-workspace dialog select{font-size:16px}
+}

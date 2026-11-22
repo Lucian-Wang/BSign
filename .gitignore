@@ -1,0 +1,14 @@
+node_modules/
+.venv/
+.env
+.env.*
+!.env.example
+data/
+test-results/
+__pycache__/
+*.pyc
+*.db*
+*.p12
+*.pfx
+*.key
+*.pem

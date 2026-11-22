@@ -1,0 +1,29 @@
+{
+  "name": "bsign",
+  "version": "1.0.0",
+  "description": "Self-hosted bilingual PDF seal and signature workspace",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build:certificate": "node scripts/build-certificate.mjs",
+    "prepare:deploy": "node scripts/version-assets.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@signpdf/placeholder-pdf-lib": "^4.0.0",
+    "@signpdf/signpdf": "^4.0.0",
+    "buffer": "^6.0.3",
+    "node-forge": "^1.4.3",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.5.438"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

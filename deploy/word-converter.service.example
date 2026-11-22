@@ -1,0 +1,36 @@
+[Unit]
+Description=BSign isolated temporary Word converter
+After=network.target
+
+[Service]
+Type=simple
+User=bsign-converter
+Group=bsign
+WorkingDirectory=/opt/bsign/server
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/bsign/venv/bin/uvicorn word_converter:app --uds /run/bsign-converter/converter.sock --workers 1 --no-access-log
+RuntimeDirectory=bsign-converter
+RuntimeDirectoryMode=0750
+UMask=0007
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateNetwork=true
+RestrictAddressFamilies=AF_UNIX
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+InaccessiblePaths=/var/lib/bsign /etc/bsign.env /www
+TemporaryFileSystem=/tmp:rw,size=256M,mode=1777,nodev,nosuid
+ReadWritePaths=/run/bsign-converter
+MemoryMax=1G
+CPUQuota=100%
+TasksMax=64
+LimitFSIZE=67108864
+LimitNOFILE=1024
+LimitCORE=0
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target
+

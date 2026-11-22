@@ -1,0 +1,3 @@
+import {readCertificate,signPdf} from '/vendor/certificate.mjs?v=ba8409ead1f8';
+let identity=null;
+self.onmessage=async({data:q})=>{try{if(q.action==='inspect'){identity=null;try{identity=readCertificate(q.bytes,q.password);}finally{new Uint8Array(q.bytes).fill(0);q.password='';}self.postMessage({id:q.id,result:identity.info});}else if(q.action==='sign'){if(!identity)throw Error('CERT_OPEN');const bytes=await signPdf(new Uint8Array(q.bytes),identity);identity=null;self.postMessage({id:q.id,result:bytes},[bytes.buffer]);}}catch(e){identity=null;self.postMessage({id:q.id,error:e.message?.startsWith('CERT_')?e.message:'CERT_SIGN'});}};
