@@ -117,11 +117,11 @@ BSign 将页面与签章合成为图片型 PDF，因此不保留原来的文字�
 
 需要独立使用或为团队提供服务时，可以将 BSign 部署到自己的服务器。
 
-Ubuntu / Debian 服务器将源码放到 `/opt/BSign`，将域名解析到服务器并放行 80、443 端口后，执行：
+在 Ubuntu / Debian 服务器上，将域名解析到服务器并放行 80、443 端口。首次安装可以从 GitHub 下载入口脚本：
 
 ```bash
-cd /opt/BSign
-sudo bash deploy/install.sh --domain sign.example.com --email ops@example.com
+curl -fsSL https://raw.githubusercontent.com/Lucian-Wang/BSign/main/deploy/bootstrap.sh -o bsign-install.sh &&
+  sudo bash bsign-install.sh --domain sign.example.com --email ops@example.com
 ```
 
 将示例域名和邮箱替换为自己的信息。脚本会安装所需的 Docker 环境、生成配置、启动应用，并申请 HTTPS 证书。已有宝塔或 Nginx 的服务器使用 `--behind-proxy` 模式。

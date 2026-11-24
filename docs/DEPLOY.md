@@ -11,7 +11,16 @@
 
 ## 2. 新服务器：一条命令安装
 
-先把本仓库下载到服务器。以 GitHub 仓库为例：
+首次安装可从 GitHub 下载入口脚本，再执行：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Lucian-Wang/BSign/main/deploy/bootstrap.sh -o bsign-install.sh &&
+  sudo bash bsign-install.sh --domain sign.example.com --email ops@example.com
+```
+
+入口脚本下载固定版本的源码包，校验 SHA-256，解压到 `/opt/BSign`，然后运行仓库自带的部署脚本。已有宝塔或 Nginx 时，可在命令末尾加 `--behind-proxy`，然后按下文配置反向代理。`/opt/BSign` 已存在时，请使用原目录中的部署脚本继续安装或更新。
+
+也可以先克隆仓库，再手动运行部署脚本：
 
 ```bash
 sudo apt-get update && sudo apt-get install -y git
